@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f4f2ee" />
+    <meta
+      name="description"
+      content="Plan your week, organize your tasks, and make time for focused work."
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Daymark" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./assets/icon-180.png" />
+    <link rel="icon" href="./assets/icon-32.png" />
+    <link
+      rel="preload"
+      href="./assets/barlow-condensed-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Daymark · Weekly planner</title>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="frame topbar-inner">
+        <button
+          type="button"
+          class="brand"
+          data-action="home"
+          aria-label="Daymark home"
+        >
+          <img src="./assets/icon-32.png" width="32" height="32" alt="" /><span
+            >Daymark<span class="brand-dot">.</span></span
+          >
+        </button>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="icon-button header-mobile"
+            data-action="focus-card"
+            aria-label="Focus timer"
+            data-icon="timer"
+          ></button>
+          <button
+            type="button"
+            class="icon-button"
+            data-action="settings"
+            aria-label="Settings"
+            data-icon="settings"
+          ></button>
+        </div>
+      </div>
+    </header>
+    <main class="frame workspace" id="workspace">
+      <div class="page-heading" id="page-heading"></div>
+      <div class="work-grid">
+        <section class="content" id="content" aria-label="Planner"></section>
+        <aside class="sidebar" aria-label="Focus and planning tools">
+          <section
+            id="focus-card"
+            class="focus-card"
+            aria-label="Focus timer"
+            tabindex="-1"
+          ></section>
+          <section
+            id="tools"
+            class="planner-tools"
+            aria-label="Planning tools"
+          ></section>
+        </aside>
+      </div>
+    </main>
+    <nav class="bottom-nav" aria-label="Planner views">
+      <div class="nav-inner" id="nav"></div>
+    </nav>
+    <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+      <div id="sheet-content"></div>
+    </dialog>
+    <div class="toast-area" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
